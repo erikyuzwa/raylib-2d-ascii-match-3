@@ -190,10 +190,16 @@ int main(void) {
 
 	background = LoadTexture("assets/background.jpg");
 	score_font = LoadFontEx("assets/04b03.ttf", SCORE_FONT_SIZE, NULL, 0);
-	background_music = LoadMusicStream("assets/bgm.mp3");
+	background_music = LoadMusicStream("assets/prismx27s-edge-246705.mp3");
 	match_sound = LoadSound("assets/match.mp3");
 
 	PlayMusicStream(background_music);
+
+	// turn down music stream a tad
+	SetMusicVolume(background_music, 0.60f);
+
+	// lower sound effect volume a tad
+	SetSoundVolume(match_sound, 0.40f);
 
 	init_board();
 	Vector2 mouse = { 0, 0 };
